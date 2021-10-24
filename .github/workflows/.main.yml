@@ -44,7 +44,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
             context: ./httpd
-            tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-epf:http
+            tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-epf:httpd
             push: ${{ github.ref == 'refs/heads/main' }}
           
           
