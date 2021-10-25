@@ -14,6 +14,8 @@ jobs:
         with:
           java-version: '11'
       - name: Build and test with Maven
+        env: 
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
         run: mvn -X -B verify sonar:sonar -Dsonar.projectKey=devops-2020-brgt -Dsonar.organization=devops-epf-brgt -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{secrets.SONAR_TOKEN}} --file ./simple-api/pom.xml
 # define job to build and publish docker image
   build-and-push-docker-image:
