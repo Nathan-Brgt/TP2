@@ -24,6 +24,12 @@ services:
       - "80:80"
     networks:
       - app-network
+   
+   devops-front-main:
+      container_name: devops-front-main
+      build: ./devops-front-main
+      networks:
+        - app-network
 
 
 volumes:
